@@ -1,10 +1,29 @@
 const diasDeLaSemana = ["Lunes","Martes", "Miercoles","Jueves","Viernes"]
 
+for(let contador = 0; contador < diasDeLaSemana.length; contador++ ) {
+    console.log("contador vale ",contador," ", "diasDeLaSemana[",contador,"]", " es el dia ", diasDeLaSemana[contador])
+    if(diasDeLaSemana[contador] === "Martes") {
+        console.log("-----Ingresa al if-----")
+        console.log("-----Dia encontrado-----")
+        console.log(diasDeLaSemana[contador])
+        console.log("-----Dia encontrado-----")
+        console.log("-----Sale del if-----")
 
-for(let i = 0; i < diasDeLaSemana.length; i++ ) {
-    console.log("Largo del array ",diasDeLaSemana.length," Contador : ", i )
-    console.log(diasDeLaSemana[i])
+    }
 }
+
+const semana = {
+
+    "1":"Lunes",
+    "2":"Martes",
+    "3":"Miercoles",
+    "4":"Jueves",
+    "5":"Viernes"
+}
+
+/*for (const dia in semana){
+    console.log(dia, " "  ,semana[dia]);console.log()
+}*/
 
 let tabla = 7
 

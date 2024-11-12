@@ -1,5 +1,4 @@
-
-// 2. Matriz diagonal
+import {obtenerEntrada}  from "./lectoorTeclado.js";
 // Crea una matriz cuadrada con 1s en la diagonal y 0s en el resto
 function crearMatrizDiagonal(n) {
     let matriz = [];
@@ -17,7 +16,6 @@ function crearMatrizDiagonal(n) {
 }
 
 
-// 4. Contador de vocales por palabra
 // Cuenta las vocales en cada palabra de un array
 function contarVocalesPorPalabra(palabras) {
     let resultados = {};
@@ -35,10 +33,35 @@ function contarVocalesPorPalabra(palabras) {
     }
     return resultados;
 }
-console.log(contarVocalesPorPalabra(['roma', 'cruz', 'Esteban']));
+//console.log(contarVocalesPorPalabra(['roma', 'cruz', 'Esteban']));
 
 
 
-/*for (let i = 0; i < text.length; i++) {
-  console.log(text[i]);
+
+// test para primaria
+// Se le realizar un prueba de conocimiento para alumnos de primaria, en la que se derterminara si conocen las vocales
+// crear el programa necesario
+
+const vocales = ["a","e","i","o","u"]
+/*for (let i = 0; i < vocales.length; i++) {
+    let pregunta = ("presiona la letra " + vocales[i] ).toString()
+    let vocal = await obtenerEntrada(pregunta + ": ")
+    console.log(vocal, " ", vocales[i])
+    console.log("\n")
+    if(vocal[i].includes(vocal)) {
+        console.log("Correcto");  
+    } else {
+        console.log("incorrecto")
+    }
+    
 }*/
+
+const palabras = []
+for (let i = 0; i < 5; i++) {
+    let pregunta = "ingresa  los  dias de la semana : "
+    let palabra = await obtenerEntrada(pregunta )
+    console.log("\n")
+    palabras.push(palabra)    
+}
+
+console.log(palabras);

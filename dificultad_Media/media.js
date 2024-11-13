@@ -63,5 +63,14 @@ for (let i = 0; i < 5; i++) {
     console.log("\n")
     palabras.push(palabra)    
 }
+async function validar() {
+    for (let i = 0; i < 5; i++) {
+        let pregunta = "ingresa  los  dias de la semana : "
+        let palabra = await obtenerEntrada(pregunta )
+        console.log("\n")
+        palabras.push(palabra)    
+    }
+}
+
 
 console.log(palabras);

@@ -1,19 +1,26 @@
 import {obtenerEntrada}  from "./lectoorTeclado.js";
 // Crea una matriz cuadrada con 1s en la diagonal y 0s en el resto
-function crearMatrizDiagonal(n) {
-    let matriz = [];
-    for (let h = 0; h < n; h++) {
-        matriz[h] = [];
-        for (let v = 0; v < n; v++) {
-            if (h === v) {
-                matriz[h][v] = 1;
-            } else {
-                matriz[h][v] = 0;
+function crearMatrizDiagonal(valor) {
+    //variable que almacena la matriz cuadrada, ahora  vacia
+    let matriz = []
+    //recorro el for para crear los elementos en el eje y 
+    for (let y = 0; y < valor; y++) {
+        // agrego un nuevo elemento dentro del array vacio, este es otro array vacio
+        matriz.push([])
+        // recorro el for para crear los elementos en el eje x
+        for (let x = 0; x < valor; x++) {
+            //pregunto si  x e y coinciden, de ser asi agrego uno den del tultimo array vacio que agregue
+            if (x === y) {
+                matriz[y].push(1)
+            } else { // de ser lo contrario imprimo 0
+                matriz[y].push(0)
             }
         }
     }
     return matriz;
 }
+
+console.log(crearMatrizDiagonal(5))
 
 
 // Cuenta las vocales en cada palabra de un array
@@ -36,6 +43,7 @@ function contarVocalesPorPalabra(palabras) {
         }
         // esto parece un array pero estoy agrgando una clave a unobjeto json
         // resultados = {}
+        // es una forma dinamica de crea propiedades
         // resultado.palabra --> resultado.roma
         resultados[palabra] = conteoVocales;
     }
@@ -43,47 +51,6 @@ function contarVocalesPorPalabra(palabras) {
 }
 //paso un array sin crear una variable
 console.log(contarVocalesPorPalabra(['roma', 'cruz', 'Esteban']));
-
-
-
-
-// test para primaria
-// Se le realizar un prueba de conocimiento para alumnos de primaria, en la que se derterminara si conocen las vocales
-// crear el programa necesario
-
-const vocales = ["a","e","i","o","u"]
-/*for (let i = 0; i < vocales.length; i++) {
-    let pregunta = ("presiona la letra " + vocales[i] ).toString()
-    let vocal = await obtenerEntrada(pregunta + ": ")
-    console.log(vocal, " ", vocales[i])
-    console.log("\n")
-    if(vocal[i].includes(vocal)) {
-        console.log("Correcto");  
-    } else {
-        console.log("incorrecto")
-    }
-    
-}*/
-
-const palabras = []
-/*for (let i = 0; i < 5; i++) {
-    let pregunta = "ingresa  los  dias de la semana : "
-    let palabra = await obtenerEntrada(pregunta )
-    console.log("\n")
-    palabras.push(palabra)    
-}
-async function validar() {
-    for (let i = 0; i < 5; i++) {
-        let pregunta = "ingresa  los  dias de la semana : "
-        let palabra = await obtenerEntrada(pregunta )
-        console.log("\n")
-        palabras.push(palabra)    
-    }
-}*///
-
-
-//console.log(palabras);
-
 
 const temperaturas = [-5, 10, 25, 40, -2, 36, 15, 28, 39];
 const temperaturasExtremas = [];
@@ -107,11 +74,17 @@ for (let i = 0; i < numeros.length; i++) {
 }
 console.log(pares)
 
-function contarHaciaAtras(n) {
+//funcion recursiva, es aquella que se llama a si misma
+//creo la funcion
+function cuentaHaciaAtras(n) {
+    //uso un if para comprobar el valor del numero
     if (n === 0) {
-        return; // Caso base: si n llega a 0, termina la función
-    } else {
-        console.log(n); // Imprimir el número actual
-        contarHaciaAtras(n - 1); // Llamada recursiva con n reducido en 1
+        //si es cero no hago nada y devuelvo un return vacio
+        return 
+    } else { //si no es cero  me llamo a mi mismo y dentro de la llamada me descuento una unidad
+        console.log(n) 
+        cuentaHaciaAtras(n - 1) 
     }
 }
+
+console.log(cuentaHaciaAtras(8))
